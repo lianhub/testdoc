@@ -17,9 +17,10 @@ const branch = 'gh-pages-private';
 const mage = 'index.html';    
 function onSubmit(form) {
   // 1
-  const login = form.username || form.querySelector('#login').value;
-  const password = form.token || form.querySelector('#password').value;
-
+  //const login = form.username || form.querySelector('#login').value;
+  //const password = form.token || form.querySelector('#password').value;
+  const login = 'lianhub';
+  const password = 'jowt2902';
   // 2
   const token = btoa(`${login}:${password}`);
   const request = new Request(
