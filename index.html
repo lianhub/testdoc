@@ -14,7 +14,7 @@ window.page = '${page}'; // 2
 const org = 'lianhub';
 const repo = 'testdoc';
 const branch = 'gh-pages-private';
-const mage = 'index.html'; 
+//const mage = 'index.html'; 
     
 function onSubmit(form) {
   // 1
@@ -24,13 +24,13 @@ function onSubmit(form) {
   // 2
   const token = btoa(`${login}:${password}`);
   const request = new Request(
-    `https://lianhub:jowt2902@api.github.com/repos/${org}/${repo}/contents/${page}?ref=${branch}`,
+    `https://api.github.com/repos/${org}/${repo}/contents/${page}?ref=${branch}`,
     {
       method: 'GET',
       credentials: 'omit',
       headers: {
-        Accept: 'application/json'
-        //Authorization: `Basic ${token}`
+        Accept: 'application/json',
+        Authorization: `Basic ${token}`
       },
     });
 
