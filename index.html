@@ -14,19 +14,17 @@ window.page = '${page}'; // 2
 const org = 'lianhub';
 const repo = 'testdoc';
 const branch = 'gh-pages-private';
-const mage = 'index.html';    
+const mage = 'index.html'; 
+    
 function onSubmit(form) {
   // 1
-  //const login = form.username || form.querySelector('#login').value;
-  //const password = form.token || form.querySelector('#password').value;
-  const login = 'lianhub';
-  const password = 'jowt2902';
+  const login = form.username || form.querySelector('#login').value;
+  const password = form.token || form.querySelector('#password').value;
+
   // 2
-  //const token = btoa(`${login}:${password}`);
-  const token = btoa("lianhub:jowt2902");
+  const token = btoa(`${login}:${password}`);
   const request = new Request(
-    //`https://api.github.com/repos/${org}/${repo}/contents/${mage}?ref=${branch}`,
-      "https://api.github.com/repos/lianhub/testdoc/contents/index.html?ref=gh-pages-private",
+    `https://api.github.com/repos/${org}/${repo}/contents/${page}?ref=${branch}`,
     {
       method: 'GET',
       credentials: 'omit',
